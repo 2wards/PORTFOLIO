@@ -1,0 +1,319 @@
+/* explore.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('laptop-setup.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  overflow-x: hidden;
+  font-size: clamp(14px, 2vw, 18px);
+}
+/* Mobile menu toggle button */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  font-size: 1.8rem;
+  padding: 10px 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+}
+
+.intro-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.intro-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 90%;
+}
+
+.intro-box h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 10px;
+}
+
+.intro-box p {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  margin-bottom: 20px;
+}
+
+.intro-box button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background-color: #ffffff;
+  color: #131a43;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.intro-box button:hover {
+  background-color: #ddd;
+}
+
+.glass-overlay {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.sidebar {
+  width: 250px;
+  padding: 30px 20px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+
+.sidebar h2 {
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+  cursor: pointer;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s;
+}
+
+.sidebar li:hover {
+  color: #00ffd0;
+  transform: translateX(5px);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.footer-connect {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.footer-connect a {
+  margin: 0 10px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-connect a:hover {
+  color: #00ffd0;
+}
+
+.footer-connect p {
+  margin: 5px 0;
+}
+.sidebar .connect-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar .connect-icons a {
+  font-size: 1.5rem;
+  color: white;
+  transition: 0.3s;
+}
+
+.sidebar .connect-icons a:hover {
+  color: #00ffd0;
+}
+
+.sidebar .connect-quote {
+  margin-top: 5px;
+  font-size: 1rem;
+  color: #e5dede;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 0 10px;
+}
+.content-panel {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.content {
+  display: none;
+  background: rgba(255, 255, 255, 0.07);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.content h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 10px;
+}
+
+.content h3 {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  margin: 10px 0 5px;
+}
+.content p, .content li {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  color: #eee;
+}
+.content a {
+  color: #00ffd0;
+  text-decoration: underline;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+}
+/* 📱 Media Query for better layout on small screens */
+@media (max-width: 768px) {
+  .glass-overlay {
+    flex-direction: column;
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 1001; 
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .sidebar {
+    display: none;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    box-shadow: none;
+  }
+
+  .sidebar.active {
+    display: block;
+  }
+
+  .content-panel {
+    padding: 20px;
+  }
+
+  .intro-box {
+    padding: 20px;
+  }
+
+  .content {
+    padding: 20px;
+    margin-top: 60px;
+  }
+
+  .sidebar li {
+    justify-content: center;
+  }
+}
+.signature-quote {
+  margin-top: 80px;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  font-style: Sans-serif;
+  color: #ccc;
+  text-align: center;
+  opacity: 0.9;
+  font-weight: bolder;
+}
+
+.hack-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+.hack-card h3 {
+  margin-bottom: 10px;
+}
+.hack-card button {
+  margin-top: 10px;
+  padding: 6px 14px;
+  border: none;
+  background-color: #ffffff10;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.hack-card button:hover {
+  background-color: #ffffff30;
+}
+.cert-popup {
+  display: none;
+  max-width: 90%;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #000;
+}
+.footer-icons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.footer-icons a {
+  margin: 0 15px;
+  font-size: 1.3rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #00ffd0;
+}
+.logo-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.circle-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}

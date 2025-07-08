@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore Siddhi's World</title>
+  <link rel="stylesheet" href="explore.css" />
+  <script defer src="explore.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <script>
+    function showCertificate(id) {
+      const img = document.getElementById(id);
+      img.style.display = img.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</head>
+<body>
+  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+  <div class="intro-popup" id="intro-popup">
+    <div class="intro-box">
+      <h2>👋 Hey there!</h2>
+      <p>I'm SIDDHI KUMARI a passionate B.Tech(CSE) student who loves building things with code👩‍💻.<br><br>
+        I enjoy working on:
+        <ul style="text-align:left; margin-top: 10px;">
+          <li>🌐 Frontend Web Development</li>
+          <li>🎨 Creative UI/UX Design</li>
+          <li>✨ Turning ideas into user-friendly digital experiences</li>
+        </ul>
+      </p>
+      <p style="margin-top: 15px;">Welcome to my portfolio — let’s explore together!</p>
+      <button onclick="closeIntro()">OK, Let’s Go!</button>
+    </div>
+  </div>
+
+  <div class="glass-overlay">
+    <div class="sidebar">
+      <h2>Explore</h2>
+      <ul>
+        <li onclick="showSection('projects')"><i class="fas fa-code"></i> Projects</li>
+        <li onclick="showSection('skills')"><i class="fas fa-laptop-code"></i> Skills</li>
+        <li onclick="showSection('academics')"><i class="fas fa-graduation-cap"></i> Academics</li>
+        <li onclick="showSection('hackathons')"><i class="fas fa-trophy"></i> Hackathons</li>
+        <li onclick="showSection('hobbies')"><i class="fas fa-music"></i> Hobbies</li>
+      </ul>
+      <div class="footer-icons">
+  <a href="mailto:siddhikumari055@gmail.com" target="_blank" title="Gmail">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/siddhi-kumari-345709325" target="_blank" title="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://github.com/2wards" target="_blank" title="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+</div>
+      <div class="connect-quote">
+        "👩‍💻 I code with vision & creativity, not just syntax!🚩"
+      </div>
+      <p style="font-size: 0.85rem; color: #888; align-items: last baseline;">— SIDDHI</p>
+    </div>
+
+    <div class="content-panel">
+      <div class="content-panel">
+      <div class="content" id="projects">
+        <h2>💼 Projects</h2>
+        <div>
+          <h3>📦 Amazon Clone (Static Webpage)<a href="https://2wards.github.io/Amazon-clone/" target="_blank" style="color:#00ffd0; margin-right: 15px;">View</a></h3>
+          <p><strong>Tech:</strong> HTML, CSS</p>
+          <p>My first web dev project — a static clone of Amazon's homepage.</p>
+        </div>
+        <div>
+          <h3>💊 Prescription-Based Medicine App <a href="https://github.com/2wards/medicine-app" target="_blank" style="color:#00ffd0;">View</a></h3>
+          <p><strong>Tech:</strong> React Native, Firebase, Git</p>
+          <p>Hackathon project focused on scanning prescriptions, tracking treatment history, and sending reminders.</p>
+        </div>
+        <div>
+          <h3>🧑‍💻 Personal Portfolio Website</h3>
+          <p><strong>Tech:</strong> HTML, CSS, JavaScript, Tailwind CSS, Vanta.js</p>
+          <p>Designed and developed my own portfolio...</p>
+        </div>
+        <div>
+          <h3>🚧 Currently Working On</h3>
+          <ul>
+            <li>Building a beginner-level UI/UX project</li>
+            <li>Learning AI fundamentals...</li>
+          </ul>
+        </div>
+      </div>
+      <div class="content" id="skills">
+        <h2>🛠️ Skills</h2>
+        <ul>
+          <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Tailwind(Basics), Bootstrap, React(Exploring)</li>
+          <li><strong>Tools:</strong> Git, GitHub, VS Code, Canva</li>
+          <li><strong>Languages:</strong> Python, C++(DSA-learning),OOP</li>
+          <li><strong>Soft Skills:</strong> Teamwork, Communication, Creativity</li>
+        </ul>
+      </div>
+        <!-- Academics -->
+<div class="content" id="academics">
+  <h2>🎓 Academics</h2>
+  <ul>
+    <li>
+      <strong>Schooling (CBSE) – DAV Public School, Gandhinagar, Ranchi, Jharkhand</strong><br />
+      ▪️ <strong>10th Grade:</strong> 90.20%  
+      <a href="https://drive.google.com/file/d/15suyWJ5vLFfyJW6DEsZ0L1lK0Hm0oDAt/view?usp=sharing" target="_blank">🎗️got Award</a><br />
+      ▪️ <strong>12th Grade:</strong> 85.02%
+    </li>
+    <br />
+
+    <li>
+      <strong>B.Tech – C.V. Raman Global University,Bhubaneswar,Odisha</strong><br />
+      ▪️ <strong>1st Sem SGPA:</strong> 8.60<br />
+      ▪️ <strong>2nd Sem SGPA:</strong> 9.05  
+      <a href="https://drive.google.com/file/d/17HXTkD-Ey7dsGnmdE9KAfIp4W0ESwfci/view?usp=sharing" target="_blank">🖼️Marksheet</a>
+    </li>
+  </ul>
+</div>
+<!-- Hackathons -->
+<div class="content" id="hackathons">
+  <h2>🚀 Hackathons</h2>
+
+  <!-- Hacksagon 2025 -->
+  <div class="hack-card">
+    <h3>Hacksagon 2025 – ABV-IIITM Gwalior</h3>
+    <p>
+      Built a smart fishery system using IoT and AI to combat overfishing and bring transparency via blockchain.<br>
+      <strong>Tech used:</strong> IoT sensors, ML for zone prediction, Solidity (concept).<br>
+      <strong>Selected for Final Round 🎯</strong>
+      <button onclick="showCertificate('cert-shortlist')">View Shortlist Email</button>
+    </p>
+    <button onclick="showCertificate('cert-hacksagon')">View Certificate</button>
+    <img id="cert-hacksagon" class="cert-popup" src="cert-hacksagon.jpg" alt="Hacksagon Certificate">
+    <img id="cert-shortlist" class="cert-popup" src="mail.png" alt="Shortlist Email">
+  </div>
+
+  <!-- Innosprint 2K25 -->
+  <div class="hack-card">
+    <h3>Innosprint 2K25 – ED Cell, CGU</h3>
+    <p>
+      Participated in a university-level ideathon focused on entrepreneurship and innovation.<br>
+      <strong>Theme:</strong> Tech for social impact.
+    </p>
+    <button onclick="showCertificate('cert-innosprint')">View Certificate</button>
+    <img id="cert-innosprint" class="cert-popup" src="cert-innosprint.png" alt="Innosprint Certificate">
+  </div>
+
+  <!-- Aptos Hackathon -->
+  <div class="hack-card">
+    <h3>💊 Build with India - Aptos Hackathon</h3>
+    <p>
+      Our team was shortlisted for the final round of the "Build with India" Aptos Hackathon. We developed a prescription-based medical record system aimed at improving healthcare transparency and patient history tracking using blockchain concepts.
+    </p>
+    <p>🛠️ <strong>Tech Stack:</strong> HTML, CSS, JavaScript, GitHub Pages</p>
+    <p><strong>Role:</strong> Frontend</p>
+    <button onclick="window.open('https://github.com/2wards/medicine-app', '_blank')">Visit</button>
+  </div>
+</div>
+
+
+      <!-- Hobbies -->
+      <div class="content" id="hobbies">
+        <h2>🎨 Hobbies</h2>
+        <p><strong>🎤 Singing & 💃 Dancing:</strong> Participated in several cultural competitions. These activities have helped me build stage presence, confidence.</p>
+        <p><a href="https://drive.google.com/file/d/10EWmiOaHxqAaTKB-b4bd93H7zlJ6SSGC/view?usp=sharing" target="_blank">📄 View Certificates</a></p>
+        <p><strong>💬 Communication & Collaboration:</strong> I enjoy participating in group activities, hackathons, and team projects where I can contribute ideas clearly and work with diverse minds.</p>
+        <p><strong>🧠 Continuous Learning:</strong> I'm always exploring new tech tools, tutorials, and AI trends — staying curious keeps me sharp and adaptable.</p>
+</div>
+    </div>
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.content');
+      sections.forEach(section => section.style.display = 'none');
+      const active = document.getElementById(sectionId);
+      if (active) {
+        active.style.display = 'block';
+        active.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    window.onload = () => {
+      document.getElementById('intro-popup').style.display = 'flex';
+    };
+
+    function closeIntro() {
+      document.getElementById('intro-popup').style.display = 'none';
+      showSection('projects');
+    }
+
+    function toggleSidebar() {
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

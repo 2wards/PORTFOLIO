@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  padding: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+.main-text {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+}
+
+.explore-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 1.5rem;
+  background: #ffffff;
+  color: #1a1a1a;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-weight: bold;
+}
+
+.explore-btn:hover {
+  background: #eeeeee;
+  color: #000000;
+}
+
+
+
+
+
