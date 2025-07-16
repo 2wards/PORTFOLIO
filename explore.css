@@ -226,6 +226,7 @@ html {
     padding: 20px;
     text-align: center;
     box-shadow: none;
+    justify-content: center; 
   }
 
   .sidebar.active {
@@ -317,3 +318,147 @@ html {
   border-radius: 50%;
   object-fit: cover;
 }
+
+.logo-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  
+}
+
+.circle-logo {
+  width: 90px;           
+  height: 90px;          
+  border-radius: 90%;
+  object-fit: cover;
+  box-shadow: 0 0 8px #00ffd0;  
+}
+/*💖 Heart Button and Feedback Form */
+  .heart-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background-color: #ff4d6d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 1.2rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+
+  .feedback-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 520px;
+    max-width: 500px;
+    background: url('butfl.gif') no-repeat center/cover;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('butfl.gif') no-repeat center/cover;
+    border-radius: 20px;
+    padding: 35px 25px;
+    color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    z-index: 9998;
+    text-align: center;
+    overflow-y: auto;
+    max-height: 90vh;
+  }
+
+  .feedback-popup h3 {
+    margin-top: 0;
+    font-size: 1.7rem;
+  }
+
+  .feedback-popup label {
+    display: block;
+    margin-top: 14px;
+    font-weight: 500;
+  }
+
+  .feedback-popup textarea,
+  .feedback-popup input,
+  .feedback-popup select {
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.85);
+    color: #000;
+    box-sizing: border-box;
+  }
+
+  .feedback-popup button {
+    margin-top: 20px;
+    background: #ff66a6;
+    color: #000;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .feedback-popup button:hover {
+    background: #ff8ac4;
+  }
+
+  .close-popup {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  @media (max-height: 500px) {
+  .feedback-popup {
+    max-height: 80vh;
+    overflow-y: scroll;
+  }
+}
+@media (max-width: 600px) {
+  .feedback-popup {
+    width: 90%;               
+    padding: 25px 15px;       
+  }
+
+  .feedback-popup h3 {
+    font-size: 1.4rem;        
+  }
+
+  .feedback-popup label {
+    font-size: 0.95rem;       
+  }
+  .feedback-popup textarea,
+  .feedback-popup input,
+  .feedback-popup select {
+    font-size: 0.95rem;       
+    padding: 10px;
+  }
+
+  .feedback-popup button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .close-popup {
+    font-size: 1.3rem;
+  }
+}
+
