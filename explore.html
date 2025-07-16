@@ -32,16 +32,58 @@
       <button onclick="closeIntro()">OK, Let’s Go!</button>
     </div>
   </div>
+   
+<!-- Heart Button -->
+<button class="heart-btn" onclick="toggleFeedback()" title="Tap to drop your kind words – they'll mean a lot!">
+  ♥
+</button>
 
-  <div class="glass-overlay">
-    <div class="sidebar">
-      <h2>Explore</h2>
-      <ul>
+<!-- Feedback Popup -->
+<div class="feedback-popup" id="feedbackPopup">
+  <span class="close-popup" onclick="toggleFeedback()">&times;</span>
+  <h3>✨ Share your thoughts ✨</h3>
+  <form action="https://formspree.io/f/xrblgpyp" method="POST">
+    <label for="rating">Rate your visit</label>
+    <select name="rating" id="rating" required>
+      <option value="">Select stars</option>
+      <option>5 ⭐⭐⭐⭐⭐</option>
+      <option>4 ⭐⭐⭐⭐</option>
+      <option>3 ⭐⭐⭐</option>
+      <option>2 ⭐⭐</option>
+      <option>1 ⭐</option>
+    </select>
+
+    <label for="feeling">How did you find the project?</label>
+    <select name="feeling" id="feeling">
+      <option>Amazing work!</option>
+      <option>Very creative & thoughtful</option>
+      <option>Has potential</option>
+      <option>Needs improvement</option>
+    </select>
+
+    <label for="message">A little note from you 💌</label>
+    <textarea name="message" id="message" rows="3" placeholder="It can be a compliment, a suggestion, or just a hello!" required></textarea>
+
+    <label for="name">Name Here</label>
+    <input type="text" name="name" id="name" placeholder="Your name (optional)" />
+
+    <button type="submit">Send with Love ❤️</button>
+  </form>
+</div>
+  
+<div class="glass-overlay">
+  <div class="sidebar">
+    <div class="logo-name">
+  <img src="logo.png" alt="Logo" class="circle-logo" />
+  <h2>Explore</h2>
+</div>
+<ul>
         <li onclick="showSection('projects')"><i class="fas fa-code"></i> Projects</li>
         <li onclick="showSection('skills')"><i class="fas fa-laptop-code"></i> Skills</li>
         <li onclick="showSection('academics')"><i class="fas fa-graduation-cap"></i> Academics</li>
         <li onclick="showSection('hackathons')"><i class="fas fa-trophy"></i> Hackathons</li>
         <li onclick="showSection('hobbies')"><i class="fas fa-music"></i> Hobbies</li>
+
       </ul>
       <div class="footer-icons">
   <a href="mailto:siddhikumari055@gmail.com" target="_blank" title="Gmail">
@@ -97,7 +139,7 @@
         </ul>
       </div>
         <!-- Academics -->
-<div class="content" id="academics">
+  <div class="content" id="academics">
   <h2>🎓 Academics</h2>
   <ul>
     <li>
@@ -112,6 +154,7 @@
       <strong>B.Tech – C.V. Raman Global University,Bhubaneswar,Odisha</strong><br />
       ▪️ <strong>1st Sem SGPA:</strong> 8.60<br />
       ▪️ <strong>2nd Sem SGPA:</strong> 9.05  
+      <a href="https://drive.google.com/file/d/17HXTkD-Ey7dsGnmdE9KAfIp4W0ESwfci/view?usp=sharing" target="_blank">🖼️Marksheet</a>
     </li>
   </ul>
 </div>
@@ -168,6 +211,7 @@
     </div>
   </div>
 
+
   <script>
     function showSection(sectionId) {
       const sections = document.querySelectorAll('.content');
@@ -193,5 +237,11 @@
       sidebar.classList.toggle('active');
     }
   </script>
-</body>
-</html>
+
+<script>
+  function toggleFeedback() {
+    const popup = document.getElementById("feedbackPopup");
+    popup.style.display = popup.style.display === "block" ? "none" : "block";
+  }
+</script>
+
