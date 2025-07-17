@@ -7,12 +7,6 @@
   <link rel="stylesheet" href="explore.css" />
   <script defer src="explore.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <script>
-    function showCertificate(id) {
-      const img = document.getElementById(id);
-      img.style.display = img.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
 </head>
 <body>
   <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
@@ -36,6 +30,7 @@
 <!-- Heart Button -->
 <button class="heart-btn" onclick="toggleFeedback()" title="Tap to drop your kind words – they'll mean a lot!">
   ♥
+  <p class="feedback-label">Feedback</p>
 </button>
 
 <!-- Feedback Popup -->
@@ -64,7 +59,7 @@
     <label for="message">A little note from you 💌</label>
     <textarea name="message" id="message" rows="3" placeholder="It can be a compliment, a suggestion, or just a hello!" required></textarea>
 
-    <label for="name">Name Here</label>
+    <label for="name">Name Please</label>
     <input type="text" name="name" id="name" placeholder="Your name (optional)" />
 
     <button type="submit">Send with Love ❤️</button>
@@ -82,6 +77,7 @@
         <li onclick="showSection('skills')"><i class="fas fa-laptop-code"></i> Skills</li>
         <li onclick="showSection('academics')"><i class="fas fa-graduation-cap"></i> Academics</li>
         <li onclick="showSection('hackathons')"><i class="fas fa-trophy"></i> Hackathons</li>
+        <li onclick="showSection('credential')"><i class="fas fa-certificate"></i> Credential</li>
         <li onclick="showSection('hobbies')"><i class="fas fa-music"></i> Hobbies</li>
 
       </ul>
@@ -102,9 +98,9 @@
       <p style="font-size: 0.85rem; color: #888; align-items: last baseline;">— SIDDHI</p>
     </div>
 
-    <div class="content-panel">
-      <div class="content-panel">
-      <div class="content" id="projects">
+<div class="content-panel">
+  <div class="content-panel">
+    <div class="content" id="projects">
         <h2>💼 Projects</h2>
         <div>
           <h3>📦 Amazon Clone (Static Webpage)<a href="https://2wards.github.io/Amazon-clone/" target="_blank" style="color:#00ffd0; margin-right: 15px;">View</a></h3>
@@ -154,7 +150,6 @@
       <strong>B.Tech – C.V. Raman Global University,Bhubaneswar,Odisha</strong><br />
       ▪️ <strong>1st Sem SGPA:</strong> 8.60<br />
       ▪️ <strong>2nd Sem SGPA:</strong> 9.05  
-      <a href="https://drive.google.com/file/d/17HXTkD-Ey7dsGnmdE9KAfIp4W0ESwfci/view?usp=sharing" target="_blank">🖼️Marksheet</a>
     </li>
   </ul>
 </div>
@@ -168,11 +163,13 @@
     <p>
       Built a smart fishery system using IoT and AI to combat overfishing and bring transparency via blockchain.<br>
       <strong>Tech used:</strong> IoT sensors, ML for zone prediction, Solidity (concept).<br>
-      <strong>Selected for Final Round 🎯</strong>
-      <button onclick="showCertificate('cert-shortlist')">View Shortlist Email</button>
+      <p><strong>Selected for Final Round 🎯</strong>
+      <button onclick="showCertificate('cert_gwalior')">View Certificate</button></p>
+      <p><button onclick="showCertificate('cert-shortlist')">View Shortlist Email</button>
+      <button onclick="showCertificate('cert-hacksagon')">Certificate of Participation</button> </p>
     </p>
-    <button onclick="showCertificate('cert-hacksagon')">View Certificate</button>
     <img id="cert-hacksagon" class="cert-popup" src="cert-hacksagon.jpg" alt="Hacksagon Certificate">
+    <img id="cert_gwalior" class="cert-popup" src="cert_gwalior.png" alt="Certificate">
     <img id="cert-shortlist" class="cert-popup" src="mail.png" alt="Shortlist Email">
   </div>
 
@@ -197,10 +194,22 @@
     <p><strong>Role:</strong> Frontend</p>
     <button onclick="window.open('https://github.com/2wards/medicine-app', '_blank')">Visit</button>
   </div>
-</div>
+</div> 
 
+<section id="credential" class="content section" style="display: none;">
 
-      <!-- Hobbies -->
+  <h2>Credentials</h2>
+  <div class="card-container">
+    <div class="card">
+      <h3>Zupra Internship</h3>
+      <p>Completed 1-month Internship as Frontend Developer building dashboards, and frontend features using HTML, CSS, JavaScript.</p>
+      <a href="Certificate (1).png" target="_blank" style="color:#65dec6; text-decoration: underline; font-size: larger; font-weight: 300; ">View</a>
+    </div>
+  </div>
+</section>
+
+  
+<!-- Hobbies -->
       <div class="content" id="hobbies">
         <h2>🎨 Hobbies</h2>
         <p><strong>🎤 Singing & 💃 Dancing:</strong> Participated in several cultural competitions. These activities have helped me build stage presence, confidence.</p>
@@ -208,40 +217,53 @@
         <p><strong>💬 Communication & Collaboration:</strong> I enjoy participating in group activities, hackathons, and team projects where I can contribute ideas clearly and work with diverse minds.</p>
         <p><strong>🧠 Continuous Learning:</strong> I'm always exploring new tech tools, tutorials, and AI trends — staying curious keeps me sharp and adaptable.</p>
 </div>
-    </div>
-  </div>
+</div>
+</div>
 
-
-  <script>
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll('.content');
-      sections.forEach(section => section.style.display = 'none');
-      const active = document.getElementById(sectionId);
-      if (active) {
-        active.style.display = 'block';
-        active.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-
-    window.onload = () => {
-      document.getElementById('intro-popup').style.display = 'flex';
-    };
-
-    function closeIntro() {
-      document.getElementById('intro-popup').style.display = 'none';
-      showSection('projects');
-    }
-
-    function toggleSidebar() {
-      const sidebar = document.querySelector('.sidebar');
-      sidebar.classList.toggle('active');
-    }
-  </script>
 
 <script>
   function toggleFeedback() {
     const popup = document.getElementById("feedbackPopup");
     popup.style.display = popup.style.display === "block" ? "none" : "block";
+  }
+</script>
+<script>
+  function showCertificate(id) {
+    // Hide all certificate popups first
+    document.querySelectorAll('.cert-popup').forEach(cert => {
+      cert.style.display = 'none';
+    });
+    // Then show the selected one
+    const cert = document.getElementById(id);
+    if (cert) {
+      cert.style.display = 'block';
+    }
+  }
+
+  // Close all certs on clicking outside buttons or popups
+  document.addEventListener('click', function (e) {
+    const isPopup = e.target.classList.contains('cert-popup');
+    const isButton = e.target.closest('button')?.getAttribute('onclick')?.includes('showCertificate');
+    if (!isPopup && !isButton) {
+      document.querySelectorAll('.cert-popup').forEach(cert => cert.style.display = 'none');
+    }
+  });
+
+  // Close certs on scroll
+  window.addEventListener('scroll', () => {
+    document.querySelectorAll('.cert-popup').forEach(cert => cert.style.display = 'none');
+  });
+
+  // 🔁 CLOSE certs when switching sections
+  function showSection(id) {
+    // Hide all content sections
+    document.querySelectorAll('.content').forEach(section => section.style.display = 'none');
+
+    // Show the selected one
+    document.getElementById(id).style.display = 'block';
+
+    // Close any open certificate
+    document.querySelectorAll('.cert-popup').forEach(cert => cert.style.display = 'none');
   }
 </script>
 
